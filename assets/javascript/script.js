@@ -1,5 +1,5 @@
 // Assignment code here
-
+var generateBtn = document.querySelector("#generate");
 var passwordLength;
 var hasLower;
 var hasUpper;
@@ -9,8 +9,8 @@ var userChoice;
  
 var getRandomLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var getRandomUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var getRandomUpper = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];  
-var gerRandomSymbol = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var getRandomNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];  
+var getRandomSymbol = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -27,7 +27,10 @@ function writePassword() {
 }
 
 function generatePassword() {
-    passwordLength = prompt("Please enter how many characters for your password? btwn 8-128");
+    passwordLength = prompt("How many characters for your password? Please enter number between 8-128");
+    while (passwordLength !== parseInt(passwordLength, 10).toString()) {
+        alert("Please enter only numbers!");
+        passwordLength = prompt("Enter number");}
     if (!passwordLength) {
     alert("Needs value");
 } else if (passwordLength < 8 || passwordLength > 128) {
@@ -44,30 +47,30 @@ if (!hasLower && !hasUpper && !hasNumber && !hasSymbol) {
     return generatePassword();
 //If all 4 confirmed
 } else if (hasLower && hasUpper && hasNumber && hasSymbol) {
-    userChoice = (getRandomLower, getRandomUpper, getRandomNumber, getRandomSymbol);
+    userChoice = getRandomLower.concat(getRandomUpper, getRandomNumber, getRandomSymbol);
     console.log(userChoice);
 //If 3 confirmed
 } else if (hasLower && hasUpper && hasNumber) {
- userChoice = (getRandomLower, getRandomUpper, getRandomNumber);
+ userChoice = getRandomLower.concat(getRandomUpper, getRandomNumber);
 } else if (hasLower && hasUpper && hasSymbol) {
-    userChoice = (getRandomLower, getRandomUpper, getRandomSymbol);
+    userChoice = getRandomLower.concat(getRandomUpper, getRandomSymbol);
 } else if (hasLower && hasNumber && hasSymbol) {
-    userChoice = (getRandomLower, getRandomNumber, getRandomSymbol);
+    userChoice = getRandomLower.concat(getRandomNumber, getRandomSymbol);
 } else if (hasUpper && hasNumber && hasSymbol) {
-    userChoice = (getRandomUpper, getRandomNumber, getRandomSymbol);
+    userChoice = getRandomUpper.concat(getRandomNumber, getRandomSymbol);
 //If 2 confirmed
 } else if (hasLower && hasUpper) {
-    userChoice = (getRandomLower, getRandomUpper);
+    userChoice = getRandomLower.concat(getRandomUpper);
 } else if (hasNumber && hasSymbol) {
-    userChoice = (getRandomNumber, getRandomSymbol);
+    userChoice = getRandomNumber.concat(getRandomSymbol);
 } else if (hasLower && hasNumber) {
-    userChoice = (getRandomLower, getRandomNumber);
+    userChoice = getRandomLower.concat(getRandomNumber);
 } else if (hasLower && hasSymbol) {
-    userChoice = (getRandomLower, getRandomSymbol);
+    userChoice = getRandomLower.concat(getRandomSymbol);
 } else if (hasUpper && hasNumber) {
-    userChoice = (getRandomUpper, getRandomNumber);
+    userChoice = getRandomUpper.concat(getRandomNumber);
 } else if (hasUpper && hasSymbol) {
-    userChoice = (getRandomUpper && getRandomSymbol);
+    userChoice = getRandomUpper.concat(getRandomSymbol);
 //If 1 confirmed
 } else if (hasLower) {
     userChoice = (getRandomLower);
