@@ -1,11 +1,6 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
-var passwordLength;
-var hasLower;
-var hasUpper;
-var hasNumber;
-var hasSymbol;
-var userChoice;
+
  
 var getRandomLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var getRandomUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -27,6 +22,12 @@ function writePassword() {
 }
 
 function generatePassword() {
+var passwordLength;
+var hasLower;
+var hasUpper;
+var hasNumber;
+var hasSymbol;
+var userChoice;
     passwordLength = prompt("How many characters for your password? Please enter number between 8-128");
     while (passwordLength !== parseInt(passwordLength, 10).toString()) {
         alert("Please enter only numbers!");
