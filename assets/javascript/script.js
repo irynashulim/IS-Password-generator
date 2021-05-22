@@ -35,6 +35,9 @@ function generatePassword() {
     alert("Needs value");
 } else if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("Needs to be between 8 and 128 characters.");
+    while (passwordLength !== parseInt(passwordLength, 10).toString()) {
+        alert("Please enter only numbers!");
+        passwordLength = prompt("Enter number");}
 } else {
     hasLower = confirm("Do you wanna use lower case?") 
     hasUpper = confirm("Do you wanna use upper case?")
@@ -43,7 +46,7 @@ function generatePassword() {
 };
 //If nothing confirmed
 if (!hasLower && !hasUpper && !hasNumber && !hasSymbol) {
-    userChoice = window.alert("Please choose at list one criteria");
+    userChoice = window.alert("You did not pick a valid option. Try again.");
     return generatePassword();
 //If all 4 confirmed
 } else if (hasLower && hasUpper && hasNumber && hasSymbol) {
