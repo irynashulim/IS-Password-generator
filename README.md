@@ -1,8 +1,11 @@
 # Password-generator
 ## Description
 Password generator - webpage that will help you generate a password that matches your criterias.  Was build with Javascript, HTML and CSS. Original HTML and CSS provided by UT Bootcamp. 
+
 **Links:**
+
 https://irynashulim.github.io/IS-Password-generator/ - deployed application;
+
 https://github.com/irynashulim/IS-Password-generator - GitHub repository for Password-generator.
 ## Table of contents
 * [Installation](#installation)
@@ -18,6 +21,7 @@ Using SSH/HTML Key: You will copy the link shown and open up either terminal (ma
 Using Download ZIP: Click on Download Zip. Locate the file and double click it to unzip the file. Locate the unzipped folder and and open it. All the files for the website will be within this folder. Click on index.html to open the website in the browser.
 ## Usage
 To use "password-generator" go to https://irynashulim.github.io/IS-Password-generator/, after page is loaded, click on "Genrate Password" button and answer the questions. Ones you finnish with them random generated password will pop up in the window above the "Generate Password" button.
+![screenshot of password generator web-page](/assets/images/screenshot.JPG)
 ## Credits
 I worked with UT TAs to resolve user input isseues.
 ## License
